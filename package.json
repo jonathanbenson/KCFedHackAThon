@@ -1,0 +1,21 @@
+{
+  "name": "kcfedcodeathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-depend": "python -m pip install flask && npm install && cd frontend && npm install",
+    "frontend-test": "cd frontend && npm test",
+    "backend-test": "cd backend && python test.py",
+    "fullstack-test": "npm run frontend-test && npm run backend-test",
+    "frontend-dev": "npm run --prefix frontend dev",
+    "backend-dev": "cd backend && set flask_env=development && python main.py",
+    "fullstack-dev": "concurrently --kill-others \"npm run frontend-dev\" \"npm run backend-dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
